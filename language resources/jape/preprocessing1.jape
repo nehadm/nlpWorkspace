@@ -1,0 +1,56 @@
+/*
+*  preprocessing1.jape
+*
+*
+* The Phase seperates Annotations of CC and commas from Token Annotations 
+*/
+
+Phase: ConjunctionIdentifier
+Options:debug = true  
+Input: Token Split
+
+Rule: ConjunctionIdentifier1
+(
+({Token.kind=="word"})+ ({Token.kind == "punctuation",Token.category ==","}):conj
+({Token.kind=="word"})+ {Split}
+)
+
+
+--> 
+:conj
+  {
+    gate.AnnotationSet matchedAnns= (gate.AnnotationSet) bindings.get("conj");	
+	gate.FeatureMap newFeatures= Factory.newFeatureMap();
+	newFeatures.put("rule","ConjunctionIdentifier1");
+	annotations.add(matchedAnns.firstNode(),matchedAnns.lastNode(),"CC", newFeatures);
+    
+ }
+
+Rule: ConjunctionIdentifier2
+(
+({Token.category=="CC"}):conj2
+)
+-->
+:conj2
+  {
+
+    gate.AnnotationSet matchedAnns= (gate.AnnotationSet) bindings.get("conj2");	
+    gate.FeatureMap newFeatures= Factory.newFeatureMap();
+    newFeatures.put("rule","ConjunctionIdentifierr21");
+    annotations.add(matchedAnns.firstNode(),matchedAnns.lastNode(),"CC", newFeatures);
+}
+
+
+Rule: ConjunctionIdentifier2
+(
+({Token.category=="IN"})({Token.kind=="word"})({Token.category=="CC"}):conj2
+)
+-->
+:conj2
+  {
+
+    gate.AnnotationSet matchedAnns= (gate.AnnotationSet) bindings.get("conj2");	
+    gate.FeatureMap newFeatures= Factory.newFeatureMap();
+    newFeatures.put("rule","ConjunctionIdentifierr21");
+    annotations.add(matchedAnns.firstNode(),matchedAnns.lastNode(),"CC", newFeatures);
+}
