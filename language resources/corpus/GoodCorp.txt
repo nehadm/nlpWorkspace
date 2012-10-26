@@ -1,0 +1,38 @@
+--------------------------------Simple Create tasks L1
+
+Create a file named jake.txt
+Create a text file named jake.txt
+create a new document called jake.txt
+create jake.txt
+
+create a folder named newFolder 
+create a new folder named newfolder 
+create a directory named newFolder
+create a new directory named newFolder
+
+--------------------------------Simple Delete tasks L1
+
+Delete a file named jake.txt
+Delete a text file named jake.txt
+Delete a document called jake.txt
+
+Delete newFolder
+Delete a folder named newFolder
+Delete a folder named newFolder
+Delete a folder called newFolder
+Delete a directory named newFolder
+Delete a directory named newFolder
+Delete a directory called newFolder
+
+--------------------------------Simple Rename tasks L1
+Rename the folder oldFolder to newFolder 
+Rename the directory oldFolder to newFolder 
+
+Rename the document oldDoc.txt to newDoc.txt
+Rename the file oldDoc.txt to newDoc.txt
+
+
+
+
+
+
