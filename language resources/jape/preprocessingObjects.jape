@@ -1,0 +1,83 @@
+/*
+*  preprocessingObjects.jape
+* Assumptions - files must have 3 character extensions e.g - xyz.abc i.e filename.extension(3 chars)
+*
+* The Phase recognises various actions 
+*/
+
+Phase: preprocessingObjects
+Input: Lookup Token Sentence action closeAction createAction deleteAction existsAction insertAction openAction removeAction	renameAction replaceAction statsAction
+Options:debug = true  control = appelt
+// test for abc.xyz abc.wxyz
+Macro: SIMPLEFILENAME
+(
+
+	(
+		{Token.kind== word}
+		{Token.category == "." , Token.kind == punctuation}
+		( {Token.kind == word , Token.length == 3 } | {Token.kind == word , Token.length == 4 })
+	)	
+)
+
+
+ /* - file objects 
+ \A([A-Za-z0-9'~`!@#$%&amp;^_+=\(\){},\-\[\]\;])+?([ A-Za-z0-9'~` !@#$%&amp;^_+=\(\){},\-\[\];]|([.]))*?(?(3)(([ A-Za-z0-9'~`!@#$ %&amp;^_+=\(\){},\-\[\]\;]*?)([A-Za-z0-9'~`!@#$%&amp;^_+=\(\){},\-\[ \];])+\z)|(\z))*/
+
+ 
+
+Rule: FileObjectRef
+(
+
+SIMPLEFILENAME
+
+
+):fileObjectRef
+
+--> 
+:fileObjectRef
+  {
+    gate.AnnotationSet matchedAnns= (gate.AnnotationSet) bindings.get("fileObjectRef");	
+	Annotation firstAnn = matchedAnns.iterator().next();
+	System.out.println(firstAnn.getFeatures());
+	gate.FeatureMap newFeatures= Factory.newFeatureMap();
+	newFeatures.put("rule","FileObjectRef");
+	//annotations.add(matchedAnns.firstNode(),matchedAnns.lastNode(),"fileObjectRef", newFeatures);
+  outputAS.add(matchedAnns.firstNode(),matchedAnns.lastNode(),"fileObjectRef", newFeatures);
+  }
+ 
+ /* - folder objects */
+
+
+Rule: DirectoryObjectRef
+(
+{Lookup.minorType == directory}
+):directoryObjectRef
+
+--> 
+:directoryObjectRef
+  {
+    gate.AnnotationSet matchedAnns= (gate.AnnotationSet) bindings.get("directoryObjectRef");	
+	gate.FeatureMap newFeatures= Factory.newFeatureMap();
+	newFeatures.put("rule","DirectoryObjectRef");
+	//annotations.add(matchedAnns.firstNode(),matchedAnns.lastNode(),"directoryObjectRef", newFeatures);
+	outputAS.add(matchedAnns.firstNode(),matchedAnns.lastNode(),"directoryObjectRef", newFeatures);
+  }
+   
+ /* - string/phrase objects */
+
+
+Rule: PhraseObjectRef
+(
+{Lookup.minorType == phrase}
+):phraseObjectRef
+
+--> 
+:phraseObjectRef
+  {
+    gate.AnnotationSet matchedAnns= (gate.AnnotationSet) bindings.get("phraseObjectRef");	
+	gate.FeatureMap newFeatures= Factory.newFeatureMap();
+	newFeatures.put("rule","PhraseObjectRef");
+	//annotations.add(matchedAnns.firstNode(),matchedAnns.lastNode(),"phraseObjectRef", newFeatures);
+    outputAS.add(matchedAnns.firstNode(),matchedAnns.lastNode(),"phraseObjectRef", newFeatures);
+  }  
+  

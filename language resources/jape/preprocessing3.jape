@@ -12,15 +12,14 @@ Options:debug = true
 /** Find file names **/
 
 Rule: RemoveAction(
-// For 
-{fileObjectRef}
+	{fileObjectRef}
 (
 {Token.category == VBN} | {Token.category == VBD}
 )
 (
 {Token}|
 {Token} {Token.string == "."} {Token}
-)actualFileName
+):actualFileName
 ):fileName
 
 --> 

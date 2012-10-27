@@ -31,7 +31,7 @@ Does the file/directory/folder  xyz exist
 Delete the file xyz
 Rename the file xyz to abc
 Find str1 in file xyz
-Locate all those files in which you find ‘mickey mouse’.
+Locate all those files in which you find 'mickey mouse’.
 Replace str1 in file xyz with str2
 Insert a phrase &amp;apos;XYZ&amp;apos; into <Node id="700" />this<Node id="704" /> file &amp;apos;File.txt&amp;apos;
 Append to beginning (head)
@@ -58,7 +58,7 @@ Open and Modify - File.
 Combination of 2 of the above . we can have 
 
 
-AND - DO task a and/then do task b and/then do task c ….. ( A ^ B ^ C).
+AND - DO task a and/then do task b and/then do task c ( A ^ B ^ C).
 OR - DO a OR b
 NOT - DO a NOT b
 Conditional - DO a iff condition else do b (  task =: condition  ? a:b) - condition will come from and or and not 
@@ -67,22 +67,22 @@ AN THINK OF ANY MORE these should be like unit  functions we can do in java and 
 create delete new
 
 1. Check whether the file &amp;apos;Resume.pdf&amp;apos; exists(). If it does, can you delete &amp;apos;fr conceicao rodrigues college of engineering&amp;apos; and instead write &amp;apos;university of mumbai&amp;apos; in place of it.
-3. Replace ‘<Node id="2021" />president<Node id="2030" /> of U.S.A’ in ‘wall street journal article’ to Obama instead of <Node id="2094" />Romney<Node id="2100" />.
-4.  Include ‘address’ in all capital and bold letters in the file ‘Cover letter’. Also write the address ‘103-12, 90 street, ozone <Node id="2233" />park<Node id="2237" />, <Node id="2239" />NY<Node id="2241" />’ in front of it.
-5. Do not cut the occurrences of the words PHP, java and perl from ‘file_original.txt’ but copy and paste those exact same words in ‘file_name.txt’.
-6. <Node id="2411" />From<Node id="2415" /> the document ‘new doc’, delete the phrase ‘oh my god !’. Check whether it has an exclamation <Node id="2509" />mark<Node id="2513" /> after god. If not, just remove the ‘oh my god’ anyways.
-7.  Modify all the files which contain ‘accounting in finance ’ and append a line ‘-by author XYZ’ at the end after the paragraph ends.
-8. If  you are able to find the expression ‘NYU <Node id="2754" />school<Node id="2760" /> of engineering’ in the 6th paragraph of the article in the file ‘NYU merger’, then add the words ‘polytechnic institute of NYU - ’ before it.
-9. Check for the term ‘doctor’ in the file ‘hospitals’ and remove all the occurrences of it from the file.
-10. create a file ‘google.pdf’ in the home directory and insert a few lines (3-5) from the file located on the desktop named ‘information about google.txt.
-11. Create a new directory ‘semester 3 courses’, create a new file in the directory and nning name it ‘natural language processing’ which will contain ‘NLP- taught by Shekhar Pradhan’
-12. Correct the word ‘organized’ to ‘organised’ in the file ‘grammar corrections’ which is in the ‘home’ directory.
-13. Remove/Delete a word ‘somewhat’ to ‘certainly’ in the document named ‘ABCD’.
-14. Open the file ‘tom-cruise.txt’ in <Node id="3585" />Microsoft microsoft<Node id="3604" /> word.
-15. Copy  all the contents of file ‘test1.txt’ to ‘test2.txt’
-16. Find out which files contain the keywords ‘natural language processing’, ‘information retrieval’, ‘information extraction’ but do not contain ‘big data’,’data visualization’.
-17.Is there any file which has the phrase ‘confidential’ in it ? If so, erase that file.
-18. Update the contents of the file ‘testing1.txt’ by adding the words ‘test cases’ in the begiof the file .
+3. Replace '<Node id="2021" />president<Node id="2030" /> of U.S.A’ in 'wall street journal article’ to Obama instead of <Node id="2094" />Romney<Node id="2100" />.
+4.  Include 'address’ in all capital and bold letters in the file 'Cover letter’. Also write the address '103-12, 90 street, ozone <Node id="2233" />park<Node id="2237" />, <Node id="2239" />NY<Node id="2241" />’ in front of it.
+5. Do not cut the occurrences of the words PHP, java and perl from 'file_original.txt’ but copy and paste those exact same words in 'file_name.txt’.
+6. <Node id="2411" />From<Node id="2415" /> the document 'new doc’, delete the phrase 'oh my god !’. Check whether it has an exclamation <Node id="2509" />mark<Node id="2513" /> after god. If not, just remove the 'oh my god’ anyways.
+7.  Modify all the files which contain 'accounting in finance ’ and append a line '-by author XYZ’ at the end after the paragraph ends.
+8. If  you are able to find the expression 'NYU <Node id="2754" />school<Node id="2760" /> of engineering’ in the 6th paragraph of the article in the file 'NYU merger’, then add the words 'polytechnic institute of NYU - ’ before it.
+9. Check for the term 'doctor’ in the file 'hospitals’ and remove all the occurrences of it from the file.
+10. create a file 'google.pdf’ in the home directory and insert a few lines (3-5) from the file located on the desktop named 'information about google.txt.
+11. Create a new directory 'semester 3 courses’, create a new file in the directory and nning name it 'natural language processing’ which will contain 'NLP- taught by Shekhar Pradhan’
+12. Correct the word 'organized’ to 'organised’ in the file 'grammar corrections’ which is in the 'home’ directory.
+13. Remove/Delete a word 'somewhat’ to 'certainly’ in the document named 'ABCD’.
+14. Open the file 'tom-cruise.txt’ in <Node id="3585" />Microsoft microsoft<Node id="3604" /> word.
+15. Copy  all the contents of file 'test1.txt’ to 'test2.txt’
+16. Find out which files contain the keywords 'natural language processing’, 'information retrieval’, 'information extraction’ but do not contain 'big data’,’data visualization’.
+17.Is there any file which has the phrase 'confidential’ in it ? If so, erase that file.
+18. Update the contents of the file 'testing1.txt’ by adding the words 'test cases’ in the begiof the file .
 19. 
 
 </TextWithNodes>

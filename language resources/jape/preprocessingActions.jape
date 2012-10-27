@@ -1,0 +1,217 @@
+/*
+*  preprocessingActions.jape
+*
+*
+* The Phase recognises various actions 
+*/
+
+Phase: preprocessingActions
+Input: Lookup Token
+Options:debug = true  
+
+// ALL Actions
+Rule: Actions
+(
+{Lookup.majorType==action}
+):action
+
+--> 
+:action
+  {
+    gate.AnnotationSet matchedAnns= (gate.AnnotationSet) bindings.get("action");	
+	Annotation firstAnn = matchedAnns.iterator().next();  
+	gate.FeatureMap newFeatures= Factory.newFeatureMap();
+	newFeatures.put("rule","Actions");
+	newFeatures.put("majorType","Actions");
+//	System.out.println(firstAnn.getFeatures());
+	//annotations.add(matchedAnns.firstNode(),matchedAnns.lastNode(),"action", newFeatures);
+	outputAS.add(matchedAnns.firstNode(),matchedAnns.lastNode(),"action", newFeatures);
+  }
+ 
+/* ----------------------------------------------- CLOSE  ACTION------------------------------------------------- */
+Rule: CloseAction
+(
+{Lookup.minorType ==close} // TODO may be we can add Token.kind == VBP or VB or NNP not sure - jake
+):closeAction
+
+--> 
+:closeAction
+  {
+    gate.AnnotationSet matchedAnns= (gate.AnnotationSet) bindings.get("closeAction");	
+	Annotation firstAnn = matchedAnns.iterator().next();  
+		//System.out.println(firstAnn.getFeatures());
+
+	gate.FeatureMap newFeatures= Factory.newFeatureMap();
+	newFeatures.put("rule","CloseAction");
+	 //annotations.add(matchedAnns.firstNode(),matchedAnns.lastNode(),"createAction", newFeatures);
+	 outputAS.add(matchedAnns.firstNode(),matchedAnns.lastNode(),"closeAction", newFeatures);
+  }
+  
+  
+/* ----------------------------------------------- CREATE  ACTION------------------------------------------------- */
+Rule: CreateAction
+(
+{Lookup.minorType ==create} // TODO may be we can add Token.kind == VBP or VB or NNP not sure - jake
+):createAction
+
+--> 
+:createAction
+  {
+    gate.AnnotationSet matchedAnns= (gate.AnnotationSet) bindings.get("createAction");	
+	Annotation firstAnn = matchedAnns.iterator().next();  
+		//System.out.println(firstAnn.getFeatures());
+
+	gate.FeatureMap newFeatures= Factory.newFeatureMap();
+	newFeatures.put("rule","CreateAction");
+	 //annotations.add(matchedAnns.firstNode(),matchedAnns.lastNode(),"createAction", newFeatures);
+	 outputAS.add(matchedAnns.firstNode(),matchedAnns.lastNode(),"createAction", newFeatures);
+  }
+ 
+/* ----------------------------------------------- DELETE  ACTION------------------------------------------------- */
+
+
+Rule: DeleteAction
+(
+{Lookup.minorType ==delete}
+):deleteAction
+
+--> 
+:deleteAction
+  {
+    gate.AnnotationSet matchedAnns= (gate.AnnotationSet) bindings.get("deleteAction");	
+	gate.FeatureMap newFeatures= Factory.newFeatureMap();
+	newFeatures.put("rule","DeleteAction");
+	//annotations.add(matchedAnns.firstNode(),matchedAnns.lastNode(),"deleteAction", newFeatures);
+	outputAS.add(matchedAnns.firstNode(),matchedAnns.lastNode(),"deleteAction", newFeatures);
+  }
+
+/* ----------------------------------------------- EXISTS  ACTION------------------------------------------------- */
+
+
+Rule: ExistsAction
+(
+{Lookup.minorType ==exist}
+):existAction
+
+--> 
+:existAction
+  {
+    gate.AnnotationSet matchedAnns= (gate.AnnotationSet) bindings.get("existAction");	
+	gate.FeatureMap newFeatures= Factory.newFeatureMap();
+	newFeatures.put("rule","ExistsAction");
+	//annotations.add(matchedAnns.firstNode(),matchedAnns.lastNode(),"existAction", newFeatures);
+	outputAS.add(matchedAnns.firstNode(),matchedAnns.lastNode(),"existAction", newFeatures);
+  }
+
+/* ----------------------------------------------- INSERT  ACTION------------------------------------------------- */
+
+
+Rule: InsertAction
+(
+{Lookup.minorType ==insert}
+):insertAction
+
+--> 
+:insertAction
+  {
+    gate.AnnotationSet matchedAnns= (gate.AnnotationSet) bindings.get("insertAction");	
+	gate.FeatureMap newFeatures= Factory.newFeatureMap();
+	newFeatures.put("rule","InsertAction");
+	//annotations.add(matchedAnns.firstNode(),matchedAnns.lastNode(),"insertAction", newFeatures);
+	outputAS.add(matchedAnns.firstNode(),matchedAnns.lastNode(),"insertAction", newFeatures);
+  }
+  
+/* ----------------------------------------------- OPEN  ACTION------------------------------------------------- */
+
+
+Rule: OpenAction
+(
+{Lookup.minorType ==open}
+):openAction
+
+--> 
+:openAction
+  {
+    gate.AnnotationSet matchedAnns= (gate.AnnotationSet) bindings.get("openAction");	
+	gate.FeatureMap newFeatures= Factory.newFeatureMap();
+	newFeatures.put("rule","OpenAction");
+	//annotations.add(matchedAnns.firstNode(),matchedAnns.lastNode(),"insertAction", newFeatures);
+	outputAS.add(matchedAnns.firstNode(),matchedAnns.lastNode(),"openAction", newFeatures);
+  }  
+
+/* ----------------------------------------------- REMOVE  ACTION------------------------------------------------- */
+
+
+Rule: RemoveAction
+(
+{Lookup.minorType ==remove}
+):removeAction
+
+--> 
+:removeAction
+  {
+    gate.AnnotationSet matchedAnns= (gate.AnnotationSet) bindings.get("removeAction");	
+	gate.FeatureMap newFeatures= Factory.newFeatureMap();
+	newFeatures.put("rule","RemoveAction");
+	//annotations.add(matchedAnns.firstNode(),matchedAnns.lastNode(),"insertAction", newFeatures);
+	outputAS.add(matchedAnns.firstNode(),matchedAnns.lastNode(),"removeAction", newFeatures);
+  }    
+
+ /* ----------------------------------------------- Rename  ACTION------------------------------------------------- */
+
+
+Rule: RenameAction
+(
+{Lookup.minorType ==rename}
+):renameAction
+
+--> 
+:renameAction
+  {
+    gate.AnnotationSet matchedAnns= (gate.AnnotationSet) bindings.get("renameAction");	
+	gate.FeatureMap newFeatures= Factory.newFeatureMap();
+	newFeatures.put("rule","RenameAction");
+	//annotations.add(matchedAnns.firstNode(),matchedAnns.lastNode(),"insertAction", newFeatures);
+	outputAS.add(matchedAnns.firstNode(),matchedAnns.lastNode(),"renameAction", newFeatures);
+  }    
+
+
+
+ /* ----------------------------------------------- Replace  ACTION------------------------------------------------- */
+
+
+Rule: ReplaceAction
+(
+{Lookup.minorType ==replace}
+):replaceAction
+
+--> 
+:replaceAction
+  {
+    gate.AnnotationSet matchedAnns= (gate.AnnotationSet) bindings.get("replaceAction");	
+	gate.FeatureMap newFeatures= Factory.newFeatureMap();
+	newFeatures.put("rule","ReplaceAction");
+	//annotations.add(matchedAnns.firstNode(),matchedAnns.lastNode(),"replaceAction", newFeatures);
+	outputAS.add(matchedAnns.firstNode(),matchedAnns.lastNode(),"replaceAction", newFeatures);
+  }
+
+  
+   /* ----------------------------------------------- Stastics  ACTION------------------------------------------------- */
+
+
+Rule: StatsAction
+(
+{Lookup.minorType ==stats}
+):statsAction
+
+--> 
+:statsAction
+  {
+    gate.AnnotationSet matchedAnns= (gate.AnnotationSet) bindings.get("statsAction");	
+	gate.FeatureMap newFeatures= Factory.newFeatureMap();
+	newFeatures.put("rule","StatsAction");
+	//annotations.add(matchedAnns.firstNode(),matchedAnns.lastNode(),"replaceAction", newFeatures);
+	outputAS.add(matchedAnns.firstNode(),matchedAnns.lastNode(),"statsAction", newFeatures);
+  }
+  
+  
