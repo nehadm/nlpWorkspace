@@ -1,0 +1,46 @@
+/*
+*  preprocessing2.jape
+*
+*
+* The Phase recognises various actions 
+*/
+
+Phase: preprocessing3
+Input: Token Lookup phraseObjectRef  directoryObjectRef fileObjectRef
+Options:debug = true  
+
+/** Find file names **/
+
+Rule: RemoveAction(
+// For 
+{fileObjectRef}
+(
+{Token.category == VBN} | {Token.category == VBD}
+)
+(
+{Token}|
+{Token} {Token.string == "."} {Token}
+)actualFileName
+):fileName
+
+--> 
+:fileName 
+  {
+    gate.AnnotationSet matchedAnns= (gate.AnnotationSet) bindings.get("fileName");	
+	gate.FeatureMap newFeatures= Factory.newFeatureMap();
+	newFeatures.put("rule","FileName");
+	//annotations.add(matchedAnns.firstNode(),matchedAnns.lastNode(),"removeAction", newFeatures);
+	outputAS.add(matchedAnns.firstNode(),matchedAnns.lastNode(),"fileName", newFeatures);
+  },
+:actualFileName 
+  {
+    gate.AnnotationSet matchedAnns2= (gate.AnnotationSet) bindings.get("actualFileName");	
+	gate.FeatureMap newFeatures= Factory.newFeatureMap();
+	newFeatures.put("rule","actualFileName");
+	//annotations.add(matchedAnns.firstNode(),matchedAnns.lastNode(),"removeAction", newFeatures);
+	outputAS.add(matchedAnns2.firstNode(),matchedAnns2.lastNode(),"actualfileName", newFeatures);
+  }
+  
+  
+  
+  
