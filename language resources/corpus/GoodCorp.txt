@@ -2,8 +2,13 @@
 
 Create a file named ja_k-e.txt
 Create a text file named jake.txt
+Create a text file named how do you do jake.txt
 create a new document called jake.txt
 create jake.txt
+create "jake.txt"
+Create a file named "ja_k-e.txt"
+Create a text file named "jake.txt"
+create a new document called "jake.txt"
 
 create a folder named newFolder 
 create a new folder named newfolder 
@@ -29,6 +34,7 @@ Rename the folder oldFolder to newFolder
 Rename the directory oldFolder to newFolder 
 Change the name of the folder oldFolder to newFolder
 
+
 Rename the document oldDoc.txt to newDoc.txt
 Rename the file oldDoc.txt to newDoc.txt
 Change the name of oldFile.txt to newFile.txt
@@ -36,13 +42,34 @@ Change the name of file oldFile.txt to newFile.txt
 
 
 
-Open folder someFolder
-Open directory someFolder
+Close the file abc.xyz 
+close the document abc.xyz
 
-Open the file someText.pdf
-Open document neha.pdf
+close the folder abc
+
+close the directory abc
+
+close abc
 
 
 
 
+does the file abc.txt exist
+does the document abc.txt exist
+ 
+does the folder abc exist
+does the directory abc exist
 
+does abc exist 
+
+open file abc.txt
+open document abc.txt
+
+open directory abc
+open folder abc
+
+count occurence of "xxxx xxx xxxx xxx xxx " in the file abc.txt
+how many files are there in the folder abc
+how many words are there in abc.txt
+what is the size of the folder xyz
+what is the size of the file abc.txt
