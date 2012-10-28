@@ -27,10 +27,20 @@ Delete a directory called newFolder
 
 Rename the folder oldFolder to newFolder 
 Rename the directory oldFolder to newFolder 
+Change the name of the folder oldFolder to newFolder
 
 Rename the document oldDoc.txt to newDoc.txt
 Rename the file oldDoc.txt to newDoc.txt
+Change the name of oldFile.txt to newFile.txt
+Change the name of file oldFile.txt to newFile.txt
 
+
+
+Open folder someFolder
+Open directory someFolder
+
+Open the file someText.pdf
+Open document neha.pdf
 
 
 
