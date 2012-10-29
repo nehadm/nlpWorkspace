@@ -148,8 +148,6 @@ Rule: FileName1
 	  } 
   
 /* - folder objects */
-
-
 Rule: DirectoryObjectRef
 (
 {Lookup.minorType == directory}
