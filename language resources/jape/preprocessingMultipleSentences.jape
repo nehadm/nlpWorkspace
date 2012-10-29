@@ -1,0 +1,20 @@
+Phase: preprocessingMultipleSentences
+Input: Lookup Token
+Options:debug = true  
+
+
+
+Rule: joinUsingAnd
+(
+{Token}
+):andJoin
+
+--> 
+:andJoin
+  {
+    gate.AnnotationSet matchedAnns= (gate.AnnotationSet) bindings.get("andJoin");	
+	gate.FeatureMap newFeatures= Factory.newFeatureMap();
+	newFeatures.put("rule","joinUsingAnd");
+    outputAS.add(matchedAnns.firstNode(),matchedAnns.lastNode(),"andJoin", newFeatures);
+  }  
+  
