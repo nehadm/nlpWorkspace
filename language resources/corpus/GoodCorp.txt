@@ -42,7 +42,7 @@ Rename the document oldDoc.txt to newDoc.txt
 Rename the file oldDoc.txt to newDoc.txt
 Change the name of oldFile.txt to newFile.txt
 Change the name of file oldFile.txt to newFile.txt
-
+change name of something to somethingelse
 
 
 Close the file abc.xyz 
@@ -81,8 +81,9 @@ what is the size of the file abc.txt
 
 Find file abc.txt
 Find abc.txt in xyz
-Find file abc.txt which is in the directory someFolder.
-
+Find file abc.txt which is in the directory xyz
+find files containing phrase "xxxx"
+are there any files with phrase "xxxxx" 
 
 Insert "xxx" before every occurrence of "yyy" in abc.txt
 Insert "xxx" after every occurrence of "yyy" in abc.txt
