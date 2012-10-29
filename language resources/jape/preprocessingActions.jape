@@ -103,6 +103,24 @@ Rule: ExistsAction
 	outputAS.add(matchedAnns.firstNode(),matchedAnns.lastNode(),"existAction", newFeatures);
   }
 
+/* ----------------------------------------------- FIND  ACTION------------------------------------------------- */
+
+
+Rule: FindAction
+(
+{Lookup.minorType == find}
+):findAction
+
+--> 
+:findAction
+  {
+    gate.AnnotationSet matchedAnns= (gate.AnnotationSet) bindings.get("findAction");	
+	gate.FeatureMap newFeatures= Factory.newFeatureMap();
+	newFeatures.put("rule","FindAction");
+	//annotations.add(matchedAnns.firstNode(),matchedAnns.lastNode(),"findAction", newFeatures);
+	outputAS.add(matchedAnns.firstNode(),matchedAnns.lastNode(),"findAction", newFeatures);
+  }
+
 /* ----------------------------------------------- INSERT  ACTION------------------------------------------------- */
 
 

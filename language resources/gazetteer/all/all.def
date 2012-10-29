@@ -11,3 +11,4 @@ stats.lst:action:stats:en
 file.lst:object:file:en
 directory.lst:object:directory:en
 string.lst:object:phrase:en
+find.lst:object:find:en
