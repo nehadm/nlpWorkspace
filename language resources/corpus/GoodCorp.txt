@@ -15,6 +15,8 @@ create a folder named newFolder
 create a new folder named newfolder 
 create a directory named newFolder
 create a new directory named newFolder
+make a new folder called poly
+make a directory called poly
 
 create file abc.txt in folder someFolder
 create folder xyz in abc
