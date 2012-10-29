@@ -7,14 +7,17 @@ create a new document called jake.txt
 create jake.txt
 create "jake.txt"
 Create a file named "ja_k-e.txt"
-Create a text file named "jake.txt"
+Create a text file named 'jake.txt'
 create a new document called "jake.txt"
+
 
 create a folder named newFolder 
 create a new folder named newfolder 
 create a directory named newFolder
 create a new directory named newFolder
 
+create file abc.txt in folder someFolder
+create folder xyz in abc
 
 
 Delete a file named jake.txt
@@ -64,6 +67,7 @@ does abc exist
 
 open file abc.txt
 open document abc.txt
+open file abc.txt with notepad
 
 open directory abc
 open folder abc
@@ -73,3 +77,35 @@ how many files are there in the folder abc
 how many words are there in abc.txt
 what is the size of the folder xyz
 what is the size of the file abc.txt
+
+
+Find file abc.txt
+Find abc.txt in xyz
+Find file abc.txt which is in the directory someFolder.
+
+
+Insert "xxx" before every occurrence of "yyy" in abc.txt
+Insert "xxx" after every occurrence of "yyy" in abc.txt
+Insert "xxx" before the first occurrence of "yyy" in abc.txt
+Insert "xxx" after the first occurrence of "yyy" in abc.txt
+Insert "xxx" before the last occurrence of "yyy" in abc.txt
+Insert "xxx" after the last occurrence of "yyy" in abc.txt
+Insert phrase "something something" in file abc.txt 
+Insert "xxx xxx" in document abc.txt
+append "xxx xxx" to the end of the file abc.txt
+append "xxx xxx" to the start of the file abc.txt
+append "xxx xxx" to the beginning of the file abc.txt
+Add "Thats all folks" to the end of "BugsBunny.txt"
+
+
+Remove all occurences of "jake neha" in the file abc.txt
+Remove occurences of "jake is mad" from the all the files.
+delete "xxx" before every occurrence of "yyy" in abc.txt
+delete "xxx" after every occurrence of "yyy" in abc.txt
+delete "xxx" before the first occurrence of "yyy" in abc.txt
+delete "xxx" after the first occurrence of "yyy" in abc.txt
+delete "xxx" before the last occurrence of "yyy" in abc.txt
+delete "xxx" after the last occurrence of "yyy" in abc.txt
+
+Replace all occurences of "jake neha" with "neha jake" in the file abc.txt
+
