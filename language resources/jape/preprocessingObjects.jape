@@ -9,13 +9,17 @@ Phase: preprocessingObjects
 Input: Lookup Token Sentence action closeAction createAction deleteAction existsAction insertAction openAction removeAction	renameAction replaceAction statsAction
 Options:debug = true  control = appelt
 // test for abc.xyz abc.wxyz
-Macro: SIMPLEFILENAME
+Macro: FILEEXTENTION
 (
-
-	(
-		{Token.kind== word}
 		{Token.category == "." , Token.kind == punctuation}
 		( {Token.kind == word , Token.length == 3 } | {Token.kind == word , Token.length == 4 })
+)
+
+Macro: SIMPLEFILENAME
+(
+	(
+		{Token.kind== word}
+		FILEEXTENTION
 	)	
 )
 
@@ -37,12 +41,52 @@ Macro: QUOTEDFILENAME
 	)	
 )
 
+Macro:QUOTEDCOMPLEXFILENAME
+(
+	(
+		( 
+			{Token.string == "\"" , Token.kind == punctuation} |
+			{Token.string == "\'" , Token.kind == punctuation}
+		) 						
+		(				 
+			({Token})+
+		)
+			FILEEXTENTION	
+		( 
+				{Token.string == "\"" , Token.kind == punctuation} |
+				{Token.string == "\'" , Token.kind == punctuation}
+		) 
+	)		
+
+)
+
+Macro: FileObjectRef
+(
+{Lookup.minorType == file}
+(
+{Token.category == VBN} | {Token.category == VBD}
+)[0,1] // should be 0 or 1 
+
+)
+
+Macro: DirectoryObjectRef
+(
+{Lookup.minorType == directory}
+(
+{Token.category == VBN} | {Token.category == VBD}
+)*
+)
+
+Macro: PhraseObjectRef
+(
+{Lookup.minorType == phrase}
+)
+
+
+
 Rule: SimpleFileName
 (
-
 ( SIMPLEFILENAME )
-
-
 ):simpleFileName
 
 --> 
@@ -50,7 +94,7 @@ Rule: SimpleFileName
   {
     gate.AnnotationSet matchedAnns= (gate.AnnotationSet) bindings.get("simpleFileName");	
 	Annotation firstAnn = matchedAnns.iterator().next();
-	System.out.println(firstAnn.getFeatures());
+//	System.out.println(firstAnn.getFeatures());
 	gate.FeatureMap newFeatures= Factory.newFeatureMap();
 	newFeatures.put("rule","SimpleFileName");
 	//annotations.add(matchedAnns.firstNode(),matchedAnns.lastNode(),"fileObjectRef", newFeatures);
@@ -66,7 +110,7 @@ Rule: QuotedFileName
 :quotedFilename
   {
     gate.AnnotationSet matchedAnns= (gate.AnnotationSet) bindings.get("quotedFilename");	
-    System.out.println(matchedAnns);
+  //  System.out.println(matchedAnns);
     //Annotation firstAnn = matchedAnns.iterator().next();
 //	System.out.println(firstAnn.getFeatures());
 	gate.FeatureMap newFeatures= Factory.newFeatureMap();
@@ -75,6 +119,34 @@ Rule: QuotedFileName
   outputAS.add(matchedAnns.firstNode(),matchedAnns.lastNode(),"quotedFilename", newFeatures);
   }		
 
+  
+Rule: FileName1
+(
+  FileObjectRef
+  (SIMPLEFILENAME|QUOTEDFILENAME):fileNameFromRef
+):fileObjectRef
+-->
+:fileObjectRef
+  {
+    gate.AnnotationSet matchedAnns= (gate.AnnotationSet) bindings.get("fileObjectRef");	
+	Annotation firstAnn = matchedAnns.iterator().next();
+//	System.out.println(firstAnn.getFeatures());
+	gate.FeatureMap newFeatures= Factory.newFeatureMap();
+	newFeatures.put("rule","fileObjectRef");
+	//annotations.add(matchedAnns.firstNode(),matchedAnns.lastNode(),"fileObjectRef", newFeatures);
+    outputAS.add(matchedAnns.firstNode(),matchedAnns.lastNode(),"fileObjectRef", newFeatures);
+  },
+ :fileNameFromRef
+ {
+	    gate.AnnotationSet matchedAnns= (gate.AnnotationSet) bindings.get("fileNameFromRef");	
+		Annotation firstAnn = matchedAnns.iterator().next();
+		System.out.println(firstAnn.getFeatures());
+		gate.FeatureMap newFeatures= Factory.newFeatureMap();
+		newFeatures.put("rule","fileNameFromRef");
+		//annotations.add(matchedAnns.firstNode(),matchedAnns.lastNode(),"fileObjectRef", newFeatures);
+	    outputAS.add(matchedAnns.firstNode(),matchedAnns.lastNode(),"fileNameFromRef", newFeatures);
+	  } 
+  
 /* - folder objects */
 
 
