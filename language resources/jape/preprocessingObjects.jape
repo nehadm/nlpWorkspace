@@ -19,33 +19,63 @@ Macro: SIMPLEFILENAME
 	)	
 )
 
+Macro: QUOTEDFILENAME
+(
+	(
+		( 
+			{Token.string == "\"" , Token.kind == punctuation} |
+			{Token.string == "\'" , Token.kind == punctuation}
+		) 						
+		(				 
+				(SIMPLEFILENAME)
+		)
+				
+		( 
+				{Token.string == "\"" , Token.kind == punctuation} |
+				{Token.string == "\'" , Token.kind == punctuation}
+		) 
+	)	
+)
 
- /* - file objects 
- \A([A-Za-z0-9'~`!@#$%&amp;^_+=\(\){},\-\[\]\;])+?([ A-Za-z0-9'~` !@#$%&amp;^_+=\(\){},\-\[\];]|([.]))*?(?(3)(([ A-Za-z0-9'~`!@#$ %&amp;^_+=\(\){},\-\[\]\;]*?)([A-Za-z0-9'~`!@#$%&amp;^_+=\(\){},\-\[ \];])+\z)|(\z))*/
-
- 
-
-Rule: FileObjectRef
+Rule: SimpleFileName
 (
 
-SIMPLEFILENAME
+( SIMPLEFILENAME )
 
 
-):fileObjectRef
+):simpleFileName
 
 --> 
-:fileObjectRef
+:simpleFileName
   {
-    gate.AnnotationSet matchedAnns= (gate.AnnotationSet) bindings.get("fileObjectRef");	
+    gate.AnnotationSet matchedAnns= (gate.AnnotationSet) bindings.get("simpleFileName");	
 	Annotation firstAnn = matchedAnns.iterator().next();
 	System.out.println(firstAnn.getFeatures());
 	gate.FeatureMap newFeatures= Factory.newFeatureMap();
-	newFeatures.put("rule","FileObjectRef");
+	newFeatures.put("rule","SimpleFileName");
 	//annotations.add(matchedAnns.firstNode(),matchedAnns.lastNode(),"fileObjectRef", newFeatures);
-  outputAS.add(matchedAnns.firstNode(),matchedAnns.lastNode(),"fileObjectRef", newFeatures);
+  outputAS.add(matchedAnns.firstNode(),matchedAnns.lastNode(),"simpleFileName", newFeatures);
   }
  
- /* - folder objects */
+Rule: QuotedFileName
+(
+( QUOTEDFILENAME ):quotedFilename
+)
+
+--> 
+:quotedFilename
+  {
+    gate.AnnotationSet matchedAnns= (gate.AnnotationSet) bindings.get("quotedFilename");	
+    System.out.println(matchedAnns);
+    //Annotation firstAnn = matchedAnns.iterator().next();
+//	System.out.println(firstAnn.getFeatures());
+	gate.FeatureMap newFeatures= Factory.newFeatureMap();
+	newFeatures.put("rule","QuotedFileName");
+	//annotations.add(matchedAnns.firstNode(),matchedAnns.lastNode(),"fileObjectRef", newFeatures);
+  outputAS.add(matchedAnns.firstNode(),matchedAnns.lastNode(),"quotedFilename", newFeatures);
+  }		
+
+/* - folder objects */
 
 
 Rule: DirectoryObjectRef
