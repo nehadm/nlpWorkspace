@@ -1,0 +1,19 @@
+input data
+
+1 find number of sentences (assume each sentence is independent of each other)
+for for each sentence 
+	1 Find action 
+	2 determine all objects in the sentence (file , folder , phrases) 
+	3 check if sentence is valid 
+	4 find dependencies from previous sentence if any ( e.g find the file abc.txt and append "xxx xxx" to it ) 
+	5 verify if action is correct from user 
+	6 execute action 
+
+	
+	TODO 
+	jape for programs 
+	simplefilename fix
+	report
+	2 jape rules for position and location 
+	
+	

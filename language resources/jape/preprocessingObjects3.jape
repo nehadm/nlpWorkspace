@@ -1,0 +1,80 @@
+Phase: preprocessingObjects3
+Input:  Lookup Split Token Sentence  	
+		action closeAction createAction deleteAction existsAction 
+		findAction insertAction openAction removeAction 
+		renameAction replaceAction statsAction
+		quote simpleFileName   quotedFilename fileObjectRef directoryObjectRef phraseObjectRef
+		quotedObject 
+Options: control = first
+
+/* Finds file extentions matches .xyz and .wxyz*/
+Macro: FILEEXTENTION
+(
+		 {Token.category == "." , Token.kind == punctuation}
+		( {Token.kind == word , Token.length == 3 } | {Token.kind == word , Token.length == 4 })
+)
+
+
+/* Finds file extentions matches abc.xyz and abc.wxyz*/
+Macro: SIMPLEFILENAME
+(
+	(
+		{Token.kind== word}
+		
+		FILEEXTENTION
+	)	
+)
+
+Rule:DirectoryObject
+(
+	{directoryObjectRef}
+	({quotedObject}):directoryObject
+
+)
+-->
+:directoryObject
+{
+  gate.AnnotationSet matchedAnns= (gate.AnnotationSet) bindings.get("directoryObject");	
+	Annotation firstAnn = matchedAnns.iterator().next();
+	//System.out.println(firstAnn.getFeatures());
+	gate.FeatureMap newFeatures= Factory.newFeatureMap();
+	newFeatures.put("rule","DirectoryObject");
+	//annotations.add(matchedAnns.firstNode(),matchedAnns.lastNode(),"fileObjectRef", newFeatures);
+outputAS.add(matchedAnns.firstNode(),matchedAnns.lastNode(),"directoryObject", newFeatures);
+}
+
+Rule:FileObject
+(
+	{fileObjectRef}
+	({quotedObject} | {simpleFileName}):fileObject
+
+)
+-->
+:fileObject
+{
+  gate.AnnotationSet matchedAnns= (gate.AnnotationSet) bindings.get("fileObject");	
+	Annotation firstAnn = matchedAnns.iterator().next();
+	//System.out.println(firstAnn.getFeatures());
+	gate.FeatureMap newFeatures= Factory.newFeatureMap();
+	newFeatures.put("rule","FileObject");
+	//annotations.add(matchedAnns.firstNode(),matchedAnns.lastNode(),"fileObjectRef", newFeatures);
+outputAS.add(matchedAnns.firstNode(),matchedAnns.lastNode(),"fileObject", newFeatures);
+}
+
+Rule: SimpleFileName
+(
+( SIMPLEFILENAME )
+):simpleFileName
+
+--> 
+:simpleFileName
+  {
+    gate.AnnotationSet matchedAnns= (gate.AnnotationSet) bindings.get("simpleFileName");	
+	Annotation firstAnn = matchedAnns.iterator().next();
+//	System.out.println(firstAnn.getFeatures());
+	gate.FeatureMap newFeatures= Factory.newFeatureMap();
+	newFeatures.put("rule","SimpleFileName");
+	newFeatures.put("kind","FileName");
+	//annotations.add(matchedAnns.firstNode(),matchedAnns.lastNode(),"fileObjectRef", newFeatures);
+  outputAS.add(matchedAnns.firstNode(),matchedAnns.lastNode(),"simpleFileName", newFeatures);
+  }

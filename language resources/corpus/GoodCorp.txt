@@ -1,114 +1,114 @@
 
 
-Create a file named ja_k-e.txt
-Create a text file named jake.txt
-Create a text file named how do you do jake.txt
-create a new document called jake.txt
-create jake.txt
-create "jake.txt"
-Create a file named "ja_k-e.txt"
-Create a text file named 'jake.txt'
-create a new document called "jake.txt"
+Create a file named ja_k-e.txt			.
+Create a text file named jake.txt		.
+Create a text file named how do you do jake.txt		.
+create a new document called jake.txt		.
+create jake.txt		.
+create "jake.txt"		.
+Create a file named "ja_k-e.txt"		.
+Create a text file named "jake.txt"		.
+create a new document called "jake.txt"		.
 
 
-create a folder named newFolder 
-create a new folder named newfolder 
-create a directory named newFolder
-create a new directory named newFolder
-make a new folder called poly
-make a directory called poly
+create a folder named "newFolder" 	.
+create a new folder named "newfolder" 	.
+create a directory named "newFolder"	.
+create a new directory named "newFolder"	.
+make a new folder called "poly"	.
+make a directory called "poly"	.
 
-create file abc.txt in folder someFolder
-create folder xyz in abc
-
-
-Delete a file named jake.txt
-Delete a text file named jake.txt
-Delete a document called jake.txt
-
-Delete newFolder
-Delete a folder named newFolder
-Delete a folder named newFolder
-Delete a folder called newFolder
-Delete a directory named newFolder
-Delete a directory named newFolder
-Delete a directory called newFolder
+create file abc.txt in folder "someFolder"	.
+create folder "xyz" in folder "abc"	.
 
 
-Rename the folder oldFolder to newFolder 
-Rename the directory oldFolder to newFolder 
-Change the name of the folder oldFolder to newFolder
+Delete a file named jake.txt	.
+Delete a text file named jake.txt	.	
+Delete a document called jake.txt	.
+
+Delete newFolder	.
+Delete a folder named "newFolder"		.
+Delete a folder named "newFolder"	.
+Delete a folder called "newFolder"	.
+Delete a directory named "newFolder"	.
+Delete a directory named "newFolder"	.
+Delete a directory called "newFolder"	.
 
 
-Rename the document oldDoc.txt to newDoc.txt
-Rename the file oldDoc.txt to newDoc.txt
-Change the name of oldFile.txt to newFile.txt
-Change the name of file oldFile.txt to newFile.txt
+Rename the folder "oldFolder" to "newFolder" 	.
+Rename the directory "oldFolder" to "newFolder" 	.
+Change the name of the folder "oldFolder" to "newFolder"	.
+
+
+Rename the document oldDoc.txt to newDoc.txt	.
+Rename the file oldDoc.txt to newDoc.txt	.
+Change the name of oldFile.txt to newFile.txt	.
+Change the name of file oldFile.txt to newFile.txt	.
 change name of something to somethingelse
 
 
-Close the file abc.xyz 
-close the document abc.xyz
+Close the file abc.xyz 	.
+close the document abc.xyz	.
 
-close the folder abc
+close the folder "abc"	.
 
-close the directory abc
+close the directory "abc"	.
 
-close abc
-
-
+close "abc"		.
 
 
-does the file abc.txt exist
-does the document abc.txt exist
+
+
+does the file abc.txt exist		.
+does the document abc.txt exist	.
  
-does the folder abc exist
-does the directory abc exist
+does the folder abc exist	.
+does the directory abc exist	.
 
-does abc exist 
+does abc exist 	.
 
-open file abc.txt
-open document abc.txt
-open file abc.txt with notepad
+open file abc.txt	.
+open document abc.txt	.
+open file abc.txt with notepad	.
 
-open directory abc
-open folder abc
+open directory "abc"	.
+open folder "abc".
 
-count occurence of "xxxx xxx xxxx xxx xxx " in the file abc.txt
-how many files are there in the folder abc
-how many words are there in abc.txt
-what is the size of the folder xyz
-what is the size of the file abc.txt
-
-
-Find file abc.txt
-Find abc.txt in xyz
-Find file abc.txt which is in the directory xyz
-find files containing phrase "xxxx"
-are there any files with phrase "xxxxx" 
-
-Insert "xxx" before every occurrence of "yyy" in abc.txt
-Insert "xxx" after every occurrence of "yyy" in abc.txt
-Insert "xxx" before the first occurrence of "yyy" in abc.txt
-Insert "xxx" after the first occurrence of "yyy" in abc.txt
-Insert "xxx" before the last occurrence of "yyy" in abc.txt
-Insert "xxx" after the last occurrence of "yyy" in abc.txt
-Insert phrase "something something" in file abc.txt 
-Insert "xxx xxx" in document abc.txt
-append "xxx xxx" to the end of the file abc.txt
-append "xxx xxx" to the start of the file abc.txt
-append "xxx xxx" to the beginning of the file abc.txt
-Add "Thats all folks" to the end of "BugsBunny.txt"
+count occurence of "xxxx xxx xxxx xxx xxx " in the file abc.txt	.
+how many files are there in the folder abc	.
+how many words are there in abc.txt	.
+what is the size of the folder "xyz"	.
+what is the size of the file abc.txt	.
 
 
-Remove all occurences of "jake neha" in the file abc.txt
+Find file abc.txt	.
+Find abc.txt in xyz	.
+Find file abc.txt which is in the directory "xyz"	.
+find files containing phrase "xxxx"	.
+are there any files with phrase "xxxxx"	. 
+
+Insert "xxx" before every occurrence of "yyy" in abc.txt	.
+Insert "xxx" after every occurrence of "yyy" in abc.txt	.
+Insert "xxx" before the first occurrence of "yyy" in abc.txt		.
+Insert "xxx" after the first occurrence of "yyy" in abc.txt		.
+Insert "xxx" before the last occurrence of "yyy" in abc.txt		.
+Insert "xxx" after the last occurrence of "yyy" in abc.txt		.
+Insert phrase "something something" in file abc.txt 		.
+Insert "xxx xxx" in document abc.txt	.
+append "xxx xxx" to the end of the file abc.txt		.
+append "xxx xxx" to the start of the file abc.txt		.
+append "xxx xxx" to the beginning of the file abc.txt	.
+Add "Thats all folks" to the end of "BugsBunny.txt"		.
+
+
+Remove all occurences of "jake neha" in the file abc.txt	.
 Remove occurences of "jake is mad" from the all the files.
-delete "xxx" before every occurrence of "yyy" in abc.txt
-delete "xxx" after every occurrence of "yyy" in abc.txt
-delete "xxx" before the first occurrence of "yyy" in abc.txt
-delete "xxx" after the first occurrence of "yyy" in abc.txt
-delete "xxx" before the last occurrence of "yyy" in abc.txt
-delete "xxx" after the last occurrence of "yyy" in abc.txt
+delete "xxx" before every occurrence of "yyy" in abc.txt	.
+delete "xxx" after every occurrence of "yyy" in abc.txt	.
+delete "xxx" before the first occurrence of "yyy" in abc.txt	.
+delete "xxx" after the first occurrence of "yyy" in abc.txt	.
+delete "xxx" before the last occurrence of "yyy" in abc.txt	.
+delete "xxx" after the last occurrence of "yyy" in abc.txt	.
 
-Replace all occurences of "jake neha" with "neha jake" in the file abc.txt
+Replace all occurences of "jake neha" with "neha jake" in the file abc.txt	.
 
